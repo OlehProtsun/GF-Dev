@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using static GF.UI.MyMessageBox;
 
 namespace GF
 {
@@ -62,7 +63,7 @@ namespace GF
             // якщо розклад порожній — показуємо повідомлення і виходимо
             if (pageSecond.IsScheduleEmpty)
             {
-                FormPageSecond.MyMessageBox.Show(
+                MyMessageBox.Show(
                     "Please fill the dispo first.",   // текст
                     "Empty schedule");                // заголовок
                 return;

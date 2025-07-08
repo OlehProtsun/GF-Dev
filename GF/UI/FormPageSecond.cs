@@ -125,28 +125,6 @@ namespace GF.UI
             var cell = dgvSchedule.Rows[e.RowIndex].Cells[e.ColumnIndex];
             _pickCallback(this, cell);
         }
-
-        public static class MyMessageBox
-        {
-            /* ---------- MessageBox-аналог ---------- */
-
-            public static DialogResult Show(
-                string text,
-                string caption = "Message",
-                MessageBoxButtons buttons = MessageBoxButtons.OK,
-                IWin32Window owner = null)
-            {
-                DialogResult result;
-
-                using (var dlg = new MessangeForm(text, buttons))   // жодної іконки
-                {
-                    dlg.Text = caption;
-
-                    result = owner == null
-                           ? dlg.ShowDialog()
-                           : dlg.ShowDialog(owner);
-                }
-
                 return result;
             }
 

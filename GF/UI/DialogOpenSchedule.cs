@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using GF.Scheduling;
 using GF.Scheduling.IO;
-using static GF.UI.FormPageSecond;
+using static GF.UI.MyMessageBox;
 
 namespace GF.UI
 {

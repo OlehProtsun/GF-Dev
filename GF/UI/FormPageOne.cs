@@ -7,7 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using static GF.Scheduling.IO.ScheduleFileService;
-using static GF.UI.FormPageSecond;
+using static GF.UI.MyMessageBox;
 
 namespace GF.UI
 {

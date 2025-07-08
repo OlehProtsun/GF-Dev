@@ -196,6 +196,7 @@
     <Compile Include="UI\MessangeForm.Designer.cs">
       <DependentUpon>MessangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\MyMessageBox.cs" />
     <Compile Include="Utils\CellMemento.cs" />
     <Compile Include="Utils\DateUtils.cs" />
     <Compile Include="Utils\Prompt.cs" />
