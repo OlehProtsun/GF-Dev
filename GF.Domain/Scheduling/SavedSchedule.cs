@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace GF.Scheduling
+namespace GF.Domain.Scheduling
 {
     /// <summary>DTO-модель для серіалізації розкладу.</summary>
     public sealed class SavedSchedule
@@ -15,9 +15,9 @@ namespace GF.Scheduling
         public int Month { get; set; }
 
         /* ───────────── сам розклад ─────────── */
-        public string[] ColumnHeaders { get; set; }          // назви стовпців
-        public string[,] Values { get; set; }          // [row,col] вміст
-        public int[] ConflictDays { get; set; }          // номери днів з конфліктами
+        public string[]? ColumnHeaders { get; set; }          // назви стовпців
+        public string[,]? Values { get; set; }          // [row,col] вміст
+        public int[]? ConflictDays { get; set; }          // номери днів з конфліктами
 
         public Dictionary<string, string> BackColors { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, string> ForeColors { get; set; } = new Dictionary<string, string>();

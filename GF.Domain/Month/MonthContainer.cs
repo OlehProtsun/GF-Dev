@@ -1,11 +1,12 @@
-﻿using GF.Scheduling;
+﻿using GF.Domain.Scheduling;
+using GF.Domain.Month;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GF.UI
+namespace GF.Domain.Month
 {
     /// <summary>
     /// Описує «контейнер»-місяць, що його створює користувач.

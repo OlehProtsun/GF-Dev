@@ -6,6 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4B426021-43AA-43A0-9A55-655BD5A35766}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
     <RootNamespace>GF</RootNamespace>
     <AssemblyName>GF</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -132,8 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Binds\BindStorage.cs" />
-    <Compile Include="Month\MonthContainer.cs" />
-    <Compile Include="Scheduling\SwapInfo.cs" />
     <Compile Include="UI\AddEmployeeDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,12 +152,8 @@
     <Compile Include="UI\ScheduleManagerForm.Designer.cs">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Scheduling\Employee.cs" />
-    <Compile Include="Scheduling\SavedSchedule.cs" />
     <Compile Include="Scheduling\ScheduleFileService.cs" />
     <Compile Include="Scheduling\ScheduleGenerator.cs" />
-    <Compile Include="Scheduling\ScheduleParameters.cs" />
-    <Compile Include="Scheduling\ScheduleResult.cs" />
     <Compile Include="UI\DialogOpenSchedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,7 +192,6 @@
     <Compile Include="UI\MessangeForm.Designer.cs">
       <DependentUpon>MessangeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\CellMemento.cs" />
     <Compile Include="Utils\DateUtils.cs" />
     <Compile Include="Utils\Prompt.cs" />
     <EmbeddedResource Include="UI\AddEmployeeDialog.resx">
@@ -248,6 +243,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GF.Domain\GF.Domain.csproj">
+      <Project>{01d11637-809c-467b-981f-417d9379da23}</Project>
+      <Name>GF.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

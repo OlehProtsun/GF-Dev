@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GF.Scheduling { 
+namespace GF.Domain.Scheduling { 
     public class ScheduleResult
     {
         public DataTable Table { get; set; }    // без  default!

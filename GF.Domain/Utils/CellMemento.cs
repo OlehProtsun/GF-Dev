@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GF.Utils
+namespace GF.Domain.Utils
 {
     public sealed class CellMemento
     {
