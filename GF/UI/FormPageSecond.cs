@@ -19,6 +19,8 @@ using ClosedXML.Excel;
 using ClosedXML.Graphics;
 using static GF.Scheduling.IO.ScheduleFileService;
 using DocumentFormat.OpenXml.Bibliography;
+using GF.Application.Services;   // де SchedulePresenter
+using GF.Application.Interfaces; // де IScheduleGenerator
 
 
 
@@ -60,13 +62,18 @@ namespace GF.UI
         private readonly SchedulePresenter _presenter;
         public string SourceFile { get; private set; }      // "May24.gfs" …
 
+
         private MonthContainer _container;
 
         public void Recalc() => RecalcConflictsAndHours();
 
+
+
         /* порожній ctor */
         public FormPageSecond()
         {
+            
+
             InitializeComponent();
             InitRuntimeOnlyThings();
             dgvSchedule.CellPainting += DgvSchedule_CellPainting;
@@ -77,8 +84,11 @@ namespace GF.UI
         public FormPageSecond(DataGridView dispo,
                       List<Employee> employees,
                       MonthContainer container,
-                      List<MonthContainer> allContainers) : this()
+                      List<MonthContainer> allContainers, 
+                      SchedulePresenter presenter) : this()
+
         {
+            _presenter = presenter;
             _dispo = dispo;
             _employees = employees;
             _container = container;

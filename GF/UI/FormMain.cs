@@ -2,6 +2,7 @@
 using GF.Scheduling;
 using GF.UI;
 using Guna.UI2.WinForms;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -21,11 +22,12 @@ namespace GF
         private FormPageSecond pageSecond;            // створюємо, коли натиснуто Create
         private ScheduleManagerForm scheduleManagerForm;
         private readonly FormPageThird pageThird = new FormPageThird();
-
+        private readonly IServiceProvider _sp;
 
         /*──────── ctor ────────*/
-        public FormMain()
+        public FormMain(IServiceProvider sp)
         {
+            _sp = sp;
             InitializeComponent();
             DoubleBuffered = true;
 
@@ -57,7 +59,7 @@ namespace GF
         {
             // створюємо форму, якщо її ще немає (або була закрита)
             if (pageSecond == null || pageSecond.IsDisposed)
-                pageSecond = new FormPageSecond();
+                pageSecond = ActivatorUtilities.CreateInstance<FormPageSecond>(_sp);
 
             // якщо розклад порожній — показуємо повідомлення і виходимо
             if (pageSecond.IsScheduleEmpty)
@@ -78,14 +80,18 @@ namespace GF
 
         /*══════════════ реакція на натиск «Create» у Page 1 ══════════════*/
         private void OnScheduleRequested(DataGridView dispo,
-                                         List<Employee> employees,
-                                         MonthContainer mc)
+                                 List<Employee> employees,
+                                 MonthContainer mc)
         {
             pageSecond?.Dispose();
-            pageSecond = new FormPageSecond(dispo,
-                                            employees,
-                                            mc,
-                                            pageOne.MonthContainers); // ← 4-й аргумент
+
+            pageSecond = ActivatorUtilities.CreateInstance<FormPageSecond>(
+                             _sp,            // той, що зберегли в полі
+                             dispo,
+                             employees,
+                             mc,
+                             pageOne.MonthContainers);   // 4-й аргумент
+
             loadform(pageSecond);
         }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GF.Infrastructure
@@ -32,6 +33,26 @@ namespace GF.Infrastructure
                 if (dto != null) list.Add(dto);
             }
             return list;
+        }
+
+        public Task SaveAsync(SavedSchedule s, CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<SavedSchedule>> LoadAllAsync(CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<SavedSchedule> LoadAsync(string name, CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(string name, CancellationToken ct = default)
+        {
+            throw new NotImplementedException();
         }
     }
 }

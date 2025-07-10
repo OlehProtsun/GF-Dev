@@ -32,12 +32,14 @@ namespace GF
                 .ConfigureServices((ctx, services) =>
                 {
                     // тимчасово використовуємо існуючий JsonScheduleRepository
-                    services.AddSingleton<IScheduleRepository, JsonScheduleRepository>();
+                    services.AddSingleton<IScheduleRepository, FileScheduleRepository>();
 
                     // форми
                     services.AddSingleton<FormMain>();
                     services.AddTransient<AddEmployeeDialog>();
                     services.AddTransient<MonthCreationDialog>();
+                    services.AddSingleton<IScheduleGenerator, ScheduleGenerator>();
+                    services.AddTransient<SchedulePresenter>();
                 });
 
             using IHost host = hostBuilder.Build();
