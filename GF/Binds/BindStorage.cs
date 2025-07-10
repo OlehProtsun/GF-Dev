@@ -14,7 +14,7 @@ namespace GF.UI
     // =====================================================================
     public static class BindStorage
     {
-        public static readonly string FilePath = Path.Combine(Application.StartupPath, "binds.json");
+        public static readonly string FilePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "binds.json");
 
         public static List<BindModel> Load()
         {

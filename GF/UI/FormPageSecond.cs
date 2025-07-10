@@ -57,7 +57,7 @@ namespace GF.UI
 
         // додайте поруч з іншими runtime-полями
         private readonly HashSet<Point> _swappedCells = new HashSet<Point>();
-
+        private readonly SchedulePresenter _presenter;
         public string SourceFile { get; private set; }      // "May24.gfs" …
 
         private MonthContainer _container;
@@ -86,6 +86,7 @@ namespace GF.UI
 
             _month = container.Month;
             _year = container.Year;
+
             FillPriorityPanel();
         }
 
@@ -296,7 +297,7 @@ namespace GF.UI
                 // зберігаємо для подальшого динамічного перерахунку
                 _lastParams = p;
 
-                var result = ScheduleGenerator.Generate(_employees, _dispo, p);
+                var result = _presenter.Build(_dispo, _employees, p);
                 if (result == null || result.Table.Rows.Count == 0)
                 {
                     MyMessageBox.Show("No schedule generated. Check your parameters and disposition.",

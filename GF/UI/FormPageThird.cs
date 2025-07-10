@@ -15,7 +15,7 @@ namespace GF.UI
     // ---------------------------------------------------------------------
     public partial class FormPageThird : Form
     {
-        private readonly string bindsFilePath = Path.Combine(Application.StartupPath, "binds.json");
+        private readonly string bindsFilePath = Path.Combine(System.Windows.Forms.Application.StartupPath, "binds.json");
         private List<BindModel> binds = new List<BindModel>();
 
         public FormPageThird()

@@ -57,7 +57,7 @@ namespace GF.UI
             comboBoxContainer.SelectedIndex = -1;
 
             /* binds */
-            bindFile = Path.Combine(Application.StartupPath, "binds.json");
+            bindFile = Path.Combine(System.Windows.Forms.Application.StartupPath, "binds.json");
             binds = BindStorage.Load();
             lastBindWriteUtc = File.Exists(bindFile)
                                ? File.GetLastWriteTimeUtc(bindFile)
