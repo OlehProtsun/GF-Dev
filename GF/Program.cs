@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GF.UI;
 using Microsoft.Extensions.DependencyInjection;
+using GF.Infrastructure;
+using GF.Infrastructure.Interfaces;
+using System.IO;
 
 
 namespace GF
@@ -24,6 +27,10 @@ namespace GF
         {
             var services = new ServiceCollection()
                 .AddSingleton<IScheduleGenerator, ScheduleGenerator>()
+                    .AddSingleton<IScheduleRepository>(
+        sp => new JsonScheduleRepository(Path.Combine(
+                 Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                 "GF_Schedules")))
                 .AddTransient<SchedulePresenter>()
                 .AddTransient<FormMain>()
                 .AddTransient<FormPageSecond>();

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GF.Domain", "GF.Domain\GF.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GF.Application", "GF.Application\GF.Application.csproj", "{7AD7CAA8-CC79-472F-940A-13D0DF81B83A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GF.Infrastructure", "GF.Infrastructure\GF.Infrastructure.csproj", "{4D080944-5EBF-42CA-A280-B03C2F828633}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7AD7CAA8-CC79-472F-940A-13D0DF81B83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AD7CAA8-CC79-472F-940A-13D0DF81B83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AD7CAA8-CC79-472F-940A-13D0DF81B83A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D080944-5EBF-42CA-A280-B03C2F828633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D080944-5EBF-42CA-A280-B03C2F828633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D080944-5EBF-42CA-A280-B03C2F828633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D080944-5EBF-42CA-A280-B03C2F828633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

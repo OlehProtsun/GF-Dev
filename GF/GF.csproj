@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Binds\BindStorage.cs" />
+    <Compile Include="Infrastructure\JsonScheduleRepository.cs" />
     <Compile Include="SchedulePresenter.cs" />
     <Compile Include="UI\AddEmployeeDialog.cs">
       <SubType>Form</SubType>
@@ -261,6 +262,10 @@
     <ProjectReference Include="..\GF.Domain\GF.Domain.csproj">
       <Project>{01d11637-809c-467b-981f-417d9379da23}</Project>
       <Name>GF.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GF.Infrastructure\GF.Infrastructure.csproj">
+      <Project>{4D080944-5EBF-42CA-A280-B03C2F828633}</Project>
+      <Name>GF.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
